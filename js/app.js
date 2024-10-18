@@ -37,41 +37,40 @@ function calcularAreaCirculo(radio) {
 function contarVocales(cadena) {
   let cont = 0;
     if (typeof cadena !== 'string') {
-       return "No se puede" ;
+        cont = -1;
     } else {
-        let vocales = "aeiouAEIOU";
+        const vocales = "aeiouAEIOU";
         let tamaño = cadena.length;
-        for (let i = 0; i < tamaño; i++) {
+        for (let i=0; i<tamaño; i++) {
             if (vocales.includes(cadena[i])) {
                 cont++;
             }
         }
     }
-    return cont;
+      return cont;
  
 }
   
   
 // Convierte una temperatura de grados Celsius a Fahrenheit
 celsiusAFahrenheit = (celsius) => {
-  
+  if (typeof celsius !=='number'){
+    return null;
+  }else{
+  let fahrenheit=(celsius * 9/5) + 32;
+  return Number(fahrenheit.toFixed(2));
+  }
 }
 
 // Crea una función que formatee un número agregando comas como separadores de miles.
 function formatearNumero(numero) {
-  
+
 }
 
 
 // Función que recibe un string en formato dd/mm/yyyy y devuelve el número de días que faltan para el 6 de Enero del año siguiente
 function reyesMagos(fecha) {
- 
-  }
 
-
-// Ejercicio 10: Convertir a lowerCamelCase
-function camelCase(cadena) {
-  
 }
 
 
@@ -84,6 +83,13 @@ function diasParaNavidad(){
 // Función que genera un número aleatorio entre comienzo y fin
 function calcularAleatorio(comienzo, fin){
 
+  if(comienzo < 0){
+    return null;
+  }else if(comienzo > fin){
+    return null;
+  };
+
+  return Math.floor(Math.random() * (comienzo - fin +1) + fin);
 }
 
 
@@ -98,4 +104,10 @@ function esPalindromo(cadena){
 function numberToWords(num) {
  
 
+}
+
+
+// Ejercicio 10: Convertir a lowerCamelCase
+function camelCase(cadena) {
+  
 }
