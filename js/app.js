@@ -23,7 +23,14 @@ function obtenerFechaActual(){
 
 // Calcula el área de un círculo a partir de su radio con dos decimales
 function calcularAreaCirculo(radio) {
- 
+  if (typeof radio !== "number" || radio < 0) {
+    return null;
+}else if(radio == 0){
+  return 0;
+}else{
+  let area = Math.PI*(radio**2);
+  return Number(area.toFixed(2));
+}
 }
 
 // Cuenta el número de vocales en una cadena de texto
