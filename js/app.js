@@ -35,6 +35,19 @@ function calcularAreaCirculo(radio) {
 
 // Cuenta el número de vocales en una cadena de texto
 function contarVocales(cadena) {
+  let cont = 0;
+    if (typeof cadena !== 'string') {
+       return "No se puede" ;
+    } else {
+        let vocales = "aeiouAEIOU";
+        let tamaño = cadena.length;
+        for (let i = 0; i < tamaño; i++) {
+            if (vocales.includes(cadena[i])) {
+                cont++;
+            }
+        }
+    }
+    return cont;
  
 }
   
