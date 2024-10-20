@@ -159,5 +159,36 @@ function numberToWords(num) {
 
 // Ejercicio 10: Convertir a lowerCamelCase
 function camelCase(cadena) {
+  if(typeof(cadena) != 'string'){
+    return null;
+
+  }else if(cadena == ""){
+    return cadena;
+
+  }else{
+    
+    cadena = cadena.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    let arraytexto = cadena.split(' ');
+    let palabra = '';
+    
+    for(let i = 1; i < arraytexto.length; i++){
   
+      if(arraytexto[i] == ""){
+        while(arraytexto[i] == ""){
+          arraytexto.splice(i, 1);
+        }
+        palabra = arraytexto[i];
+        palabra = palabra.replace(palabra[0], palabra[0].toUpperCase());
+        arraytexto[i] = palabra;
+      }else{
+        palabra = arraytexto[i];
+        palabra = palabra.replace(palabra[0], palabra[0].toUpperCase());
+        arraytexto[i] = palabra;
+      }
+    }
+    
+    arraytexto = arraytexto.join('')
+    return arraytexto;
+  }
 }
