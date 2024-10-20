@@ -119,7 +119,6 @@ function calcularAleatorio(comienzo, fin){
 
 //   función para verificar si una cadena es un palíndromo sin utilizar expresiones regulares ni programación funcional
 function esPalindromo(cadena){
-  function esPalindromo(cadena) {
     if (typeof cadena !== 'string' || cadena.trim() === '') {
       return false; 
     }
@@ -131,7 +130,7 @@ function esPalindromo(cadena){
     return minisculasSinEspacios === invertirCadena;
   }
   
-}
+
 
 // Función que recibe un número y devuelve un string con el número escrito en palabras
 function numberToWords(num) {
