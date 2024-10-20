@@ -66,6 +66,25 @@ celsiusAFahrenheit = (celsius) => {
 function formatearNumero(numero) {
   if(typeof(numero)!=='number'){
     return null;
+  }else{
+    let cadena = String(Math.floor(numero));
+
+    let decimales = String(numero.toFixed(2)).split('.').splice(1);
+    
+    let indice1 = cadena.length;
+    let indice2;
+    let formateado = cadena.substring(indice1, indice2);
+
+    while(indice1 >= 1 ){
+      indice2 = indice1;
+      indice1 -= 3;
+      formateado += cadena.
+                    substring(indice1, indice2).
+                    split('').reverse().join('') + ".";
+    } 
+
+    formateado = formateado.split('').reverse().splice(1).join('');
+    return Number(decimales) > 0 ? formateado + ',' + decimales : formateado;
   }
   
 
@@ -100,7 +119,17 @@ function calcularAleatorio(comienzo, fin){
 
 //   función para verificar si una cadena es un palíndromo sin utilizar expresiones regulares ni programación funcional
 function esPalindromo(cadena){
-
+  function esPalindromo(cadena) {
+    if (typeof cadena !== 'string' || cadena.trim() === '') {
+      return false; 
+    }
+  
+    const minisculasSinEspacios = cadena.toLowerCase().replace(/\s+/g, '');
+  
+    const invertirCadena = minisculasSinEspacios.split('').reverse().join('');
+  
+    return minisculasSinEspacios === invertirCadena;
+  }
   
 }
 
