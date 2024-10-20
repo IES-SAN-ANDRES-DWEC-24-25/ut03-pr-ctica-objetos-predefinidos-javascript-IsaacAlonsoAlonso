@@ -126,7 +126,7 @@ function esPalindromo(cadena){
     
     let cont = 0;
     let palabra = cadena.replaceAll(' ', '').toLowerCase();
-    let reverseCont= palabra.length-1;
+    let palindromo= palabra.length-1;
   
     if(palabra == "" ){
       return false;
@@ -134,13 +134,13 @@ function esPalindromo(cadena){
       return null;
     }else{
 
-      while(cont <= reverseCont){
+      while(cont <= palindromo){
         
-        if(palabra[cont] != palabra[reverseCont]){
+        if(palabra[cont] != palabra[palindromo]){
           return false;
         }else {
           cont++;
-          reverseCont--;
+          palindromo--;
         }
   
       }
