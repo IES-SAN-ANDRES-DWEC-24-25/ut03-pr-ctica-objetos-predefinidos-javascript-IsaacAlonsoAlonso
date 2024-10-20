@@ -119,17 +119,35 @@ function calcularAleatorio(comienzo, fin){
 
 //   función para verificar si una cadena es un palíndromo sin utilizar expresiones regulares ni programación funcional
 function esPalindromo(cadena){
-    if (typeof cadena !== 'string' || cadena.trim() === '') {
-      return false; 
+  if(!isNaN(cadena)){
+    return false;
+  
+  }else{
+    
+    let cont = 0;
+    let palabra = cadena.replaceAll(' ', '').toLowerCase();
+    let reverseCont= palabra.length-1;
+  
+    if(palabra == "" ){
+      return false;
+    }else if(!isNaN(cadena)){
+      return null;
+    }else{
+
+      while(cont <= reverseCont){
+        
+        if(palabra[cont] != palabra[reverseCont]){
+          return false;
+        }else {
+          cont++;
+          reverseCont--;
+        }
+  
+      }
+      return true;
     }
-  
-    const minisculasSinEspacios = cadena.toLowerCase().replace(/\s+/g, '');
-  
-    const invertirCadena = minisculasSinEspacios.split('').reverse().join('');
-  
-    return minisculasSinEspacios === invertirCadena;
   }
-  
+}
 
 
 // Función que recibe un número y devuelve un string con el número escrito en palabras
